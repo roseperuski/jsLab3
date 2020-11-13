@@ -3,7 +3,7 @@ const submissions = [
     {name: "Jane", 
     score: 95,
     date: "2020-01-24",
-    passed: true, },
+    passed: true },
 
     { 
     name: "Joe",
@@ -14,7 +14,7 @@ const submissions = [
     {name: "Jack",
     score: 59,
     date: "2019-07-25",
-    passed: false,},
+    passed: false},
 
     {name: "Jill",
     score: 88,
@@ -102,15 +102,24 @@ function findAverageScore(array){
 
 //return a new array using the filter method. filter should find objects in the arrya that have passing scores
 function filterPassing(array){
-
+    let passing = array.filter(function (o) {
+        return o.passed === true;
+    });
+    
+    return passing;
 }
 
 //return a new array using filter/ find objects that have scores >=90
 function filter90andAbove(array){
-
+    let over90 = array.filter(function (o) {
+        return o.score > 90;
+    });
+    
+    return over90;
 }
 
-// function useAvg (array){
+// testing calling another function inside my function 
+//function useAvg (array){
 //     let avg = findAverageScore(array);
 //     console.log (`The average for the class is ${avg}`);
 // }
@@ -120,30 +129,37 @@ function filter90andAbove(array){
 // console.log(submissions);
 
 // //addSubmission test
-// addSubmission(submissions, "Jasper", 77, "2020-10-20");
-// console.log(submissions);
+addSubmission(submissions, "Jasper", 77, "2020-10-20");
+console.log(submissions);
 
 // //deleteSubmissionbyIndex test
-// deleteSubmissionbyIndex(submissions, 0);
-// console.log(submissions);
+deleteSubmissionbyIndex(submissions, 0);
+console.log(submissions);
 
 // //deleteSubmissionbyName test
-// deleteSubmissionbyName(submissions, "Jasper");
-// console.log(submissions);
+deleteSubmissionbyName(submissions, "Jasper");
+console.log(submissions);
 
 //editSubmission test
-// editSubmission(submissions, 0, 45);
-// console.log(submissions);
+editSubmission(submissions, 0, 45);
+console.log(submissions);
 
 //findSubmissionByName test
 //findSubmissionByName(submissions, "Joe");
 
 //findLowestScore test
-//findLowestScore(submissions);
+findLowestScore(submissions);
 
 //findAverageScore test
 findAverageScore(submissions);
-useAvg(submissions);
+// useAvg(submissions);
+
+//test filterPassing
+console.log(filterPassing(submissions));
+
+
+//test filter90andAbove
+console.log(filter90andAbove(submissions));
 
 
 
