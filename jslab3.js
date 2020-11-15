@@ -78,7 +78,7 @@ function findLowestScore(array){
     array.forEach(element => {
         
         if(element.score<lowestScore){
-            console.log(element.score);
+            
             lowestScore=element.score;
             
         }
@@ -91,7 +91,7 @@ function findLowestScore(array){
 function findAverageScore(array){
     let total=0;
 
-    console.log(total);
+   // console.log(total);
     for (const element of array){
         total+=element.score;
     }
@@ -118,17 +118,11 @@ function filter90andAbove(array){
     return over90;
 }
 
-// testing calling another function inside my function 
-//function useAvg (array){
-//     let avg = findAverageScore(array);
-//     console.log (`The average for the class is ${avg}`);
-// }
 
 //testing
 
-// console.log(submissions);
 
-// //addSubmission test
+//addSubmission test
 addSubmission(submissions, "Jasper", 77, "2020-10-20");
 console.log(submissions);
 
@@ -145,14 +139,14 @@ editSubmission(submissions, 0, 45);
 console.log(submissions);
 
 //findSubmissionByName test
-//findSubmissionByName(submissions, "Joe");
+findSubmissionByName(submissions, "Joe");
 
 //findLowestScore test
-findLowestScore(submissions);
+console.log(`This is the lowest score ${findLowestScore(submissions)}`);
 
 //findAverageScore test
-findAverageScore(submissions);
-// useAvg(submissions);
+
+console.log(`This is the average score ${findAverageScore(submissions)}`);
 
 //test filterPassing
 console.log(filterPassing(submissions));
