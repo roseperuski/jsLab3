@@ -43,8 +43,10 @@ function deleteSubmissionbyIndex(array, index){
 
 //remove the object from the array that has the provided name. incorportae fincdIndex method an splice
 function deleteSubmissionbyName(array, name){
-    const index = array.indexOf(name);
-    array.splice(index, 1);
+    
+     let index = array.findIndex(namer => namer.name === name);
+     return array.splice(index, 1);
+    
 }
 
 //update object's score in array at indecs. Use conditional to se value for the passed property
@@ -131,12 +133,13 @@ deleteSubmissionbyIndex(submissions, 0);
 console.log(submissions);
 
 // //deleteSubmissionbyName test
-deleteSubmissionbyName(submissions, "Jasper");
+
+deleteSubmissionbyName(submissions, 'Joe');
 console.log(submissions);
 
 //editSubmission test
-editSubmission(submissions, 0, 45);
-console.log(submissions);
+ editSubmission(submissions, 0, 45);
+ console.log(submissions);
 
 //findSubmissionByName test
 findSubmissionByName(submissions, "Joe");
